@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div class="headerList" th:fragment="header">
+    <div class="headerLogoItem">
+      <ol class="navbarIcon">
+      <li><a th:href="@{/watchfun/home}" ><b> Watch <span class="glyphicon glyphicon-play"></span> Fun</b></a></li>
+    </ol>
+    </div>
+    <div class="headerItem">
+      <ol class="navbarIcon">
+      <li><a th:href="@{/watchfun/home}" > <span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a th:href="@{'/watchfun'+/movie_info.html}" ><span class="glyphicon glyphicon-list-alt"></span> Browse</a> </li>
+      <li><a th:href="@{Welcome}" ><span class="glyphicon glyphicon-phone-alt"></span> Contact Us</a></li>
+      <li><a th:href="@{Welcome.html}" ><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+    </ol>
+    </div>
+
+</div>
+</html>

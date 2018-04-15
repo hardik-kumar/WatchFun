@@ -2,7 +2,7 @@ package com.project.watchfun.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -20,6 +20,7 @@ abstract public class Entertain implements Serializable{
 	protected double price;
 	private String language;
 	private String downloadLink;
+	@Column(length=8000)
 	private String synopsis;
 	private double size;
 	

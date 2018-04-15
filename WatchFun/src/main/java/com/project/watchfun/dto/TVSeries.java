@@ -4,143 +4,99 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
-public class TVSeries extends Entertain implements Serializable{
+public class TVSeries extends Entertain implements Serializable {
 
 	/**
+	 * Parent id has to be added. and Episode nad Season has yo be deleted.
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-//	@ManyToMany(mappedBy="tvSeriesSet")
-//	private Set<Auteur> auteurSet = new HashSet<>();
-//
-//	@ManyToMany(mappedBy="tvSeriesSet")
-//	private Set<Genre> genre;
-//	
-//	@ManyToMany(mappedBy="entertainList")
-//	private Set<Cast> castList = new HashSet<>();
-//	@OneToMany(mappedBy="tvSeries")
-//	private Set<Season> seasonSet = new HashSet<>();
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "tvseries_auteur", joinColumns = @JoinColumn(name = "tvseries_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "auteur_id", referencedColumnName = "id"))
+	private Set<Auteur> auteurSet = new HashSet<>();
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "tvseries_genre", joinColumns = @JoinColumn(name = "tvseries_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "genre_id", referencedColumnName = "id"))
+	private Set<Genre> genreSet;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "tvseries_cast", joinColumns = @JoinColumn(name = "tvseries_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "cast_id", referencedColumnName = "id"))
+	private Set<Cast> castSet = new HashSet<>();
+	// @OneToMany(mappedBy="tvSeries")
+	// private Set<Season> seasonSet = new HashSet<>();
 	@Id
-	private String id;
-	private String auteurSet;
-	private String genre;
-	private String castList;
-	private String seasonSet;
-	
-	
-	public TVSeries(String id, String name, String img, double rating, double price, String language,
-			String downloadLink, String synopsis, double size, String status,String auteurSet,String genre,String castList,String seasonSet) {
-		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
-		this.id=id;
-		this.auteurSet=auteurSet;
-		this.genre=genre;
-		this.castList=castList;
-		this.seasonSet=seasonSet;
-	}
-
-
-	public TVSeries(String name,String img,double rating, double price) {
-		super.name=name;
-		super.img=img;
-		super.rating=rating;
-		super.price=price;
-	}
-
+	private int id;
+	private int parentId;
 
 	public TVSeries() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
+	public TVSeries(int id, int parentId, String name, String img, double rating, double price, String language,
+			String downloadLink, String synopsis, double size, String status, Set<Auteur> auteurSet,
+			Set<Genre> genreSet, Set<Cast> castSet) {
+		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
 		this.id = id;
-	}
-
-
-	public String getGenre() {
-		return genre;
-	}
-
-
-
-
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-
-
-
-
-	public void setAuteurSet(String auteurSet) {
+		this.parentId = parentId;
 		this.auteurSet = auteurSet;
+		this.genreSet = genreSet;
+		this.castSet = castSet;
 	}
 
-
-
-
-
-	public void setCastList(String castList) {
-		this.castList = castList;
-	}
-
-
-
-
-
-	public void setSeasonSet(String seasonSet) {
-		this.seasonSet = seasonSet;
-	}
-
-
-	public String getAuteurSet() {
+	public Set<Auteur> getAuteurSet() {
 		return auteurSet;
 	}
 
-
-	public String getCastList() {
-		return castList;
+	public void setAuteurSet(Set<Auteur> auteurSet) {
+		this.auteurSet = auteurSet;
 	}
 
-
-	public String getSeasonSet() {
-		return seasonSet;
+	public Set<Genre> getGenreSet() {
+		return genreSet;
 	}
 
+	public void setGenreSet(Set<Genre> genreSet) {
+		this.genreSet = genreSet;
+	}
+
+	public Set<Cast> getCastSet() {
+		return castSet;
+	}
+
+	public void setCastSet(Set<Cast> castSet) {
+		this.castSet = castSet;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(int parentId) {
+		this.parentId = parentId;
+	}
 
 	@Override
 	public String toString() {
-		return "TVSeries [id=" + id + ", auteurSet=" + auteurSet + ", genre=" + genre + ", castList=" + castList
-				+ ", seasonSet=" + seasonSet + "]";
+		return "TVSeries [auteurSet=" + auteurSet + ", genreSet=" + genreSet + ", castSet=" + castSet + ", id=" + id
+				+ ", parentId=" + parentId + "]";
 	}
 
-
-
-
-
-
-	
-	
-	
-	
-
-	
-	
 }

@@ -2,64 +2,57 @@
 //
 //import java.io.Serializable;
 //
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.ManyToOne;
+//import javax.persistence.Embeddable;
 //
-//@Entity
+//@Embeddable
 //public class Episode implements Serializable{
 //
 //	/**
 //	 * 
 //	 */
 //	private static final long serialVersionUID = 1L;
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private int id;
+//	private String name;
 //	private String link;
-//	@ManyToOne
-//	private Season season;
+//
 //	
 //	public Episode() {
 //		
 //	}
 //
-//	public Episode(int id, String link, Season season) {
+//
+//	public Episode(String name, String link) {
 //		super();
-//		this.id = id;
+//		this.name = name;
 //		this.link = link;
-//		this.season = season;
 //	}
 //
-//	public int getId() {
-//		return id;
+//
+//	public String getName() {
+//		return name;
 //	}
 //
-//	public void setId(int id) {
-//		this.id = id;
+//
+//	public void setName(String name) {
+//		this.name = name;
 //	}
+//
 //
 //	public String getLink() {
 //		return link;
 //	}
 //
+//
 //	public void setLink(String link) {
 //		this.link = link;
 //	}
 //
-//	public Season getSeason() {
-//		return season;
-//	}
-//
-//	public void setSeason(Season season) {
-//		this.season = season;
-//	}
 //
 //	@Override
 //	public String toString() {
-//		return "Episode [id=" + id + ", link=" + link + ", season=" + season + "]";
+//		return "Episode [name=" + name + ", link=" + link + "]";
 //	}
+//
+//	
+//
 //	
 //}

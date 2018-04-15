@@ -6584,3 +6584,20 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/* HARDIK */
+
+.headerList{
+   height: 7%;
+    width: 100%;
+    background: #f6f6f6;
+        
+}
+
+.headerLogoItem{
+  padding-left: 3%;
+  text-decoration: none;
+}
+
+.headerItem{
+  padding-left: 60%;
+}

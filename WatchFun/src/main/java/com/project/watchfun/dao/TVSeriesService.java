@@ -20,12 +20,5 @@ public class TVSeriesService {
 		return categories;
 	}
 	
-	public String insertTVSeries() {
-		TVSeries tv= new TVSeries("asd", "asd", "ss", 20, 20.0, "sad", "downloadLink", "synopsis", 20, "status", "auteurSet", "genre", "castList", "seasonSet");
-		tvSeriesRepository.save(tv);
-		return "inserted";
-	}
+	
 }
-
-
-

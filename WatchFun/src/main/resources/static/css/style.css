@@ -412,7 +412,20 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	background: #f6f6f6;
 	color: #777;
 	padding: 30px 0 25px 0;
+	posotion:absolute;
+	bottom:0;
+	height:15%;
+	width:100%;
+	margin-bottom:0
+	
+}	
+
+.footerLocation{
+	position: absolute;
+ bottom: 0;
+ width: 100%;
 }
+
 #footer p {
 	font-size: 13px;
 }
@@ -439,22 +452,149 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 
 
 
-ol.dd li {
+ol.downloadlink li {
 	display: inline-block;
 	margin-left: 20px;
 }
-ol.dd li a {
+ol.downloadlink li a {
 	border: 1px solid #777;
 	color: #555;
 	padding: 8px 20px;
 }
-ol.dd li a.active {
+ol.downloadlink li a.active {
 	background: #222;
 	border: 1px solid #222;
 	color: #fff;
 }
-ol.dd li a:hover {
+ol.downloadlink li a:hover {
 	background: #222;
 	border: 1px solid #222;
 	color: #fff;
+}
+
+
+
+
+ol.downloadButton li {
+	display: inline-block;
+	width: 100%;
+	margin-top: 15px;
+}
+ol.downloadButton li a {
+	border: 1px solid #777;
+	color: #555;
+	width: 100%;
+	padding: 8px 20px;
+}
+ol.downloadButton li a.active 
+{
+	background: #222;
+	border: 1px solid #222;
+	color: #fff;
+	width: 100%;
+}
+ol.downloadButton li a:hover {
+	background: #222;
+	border: 1px solid #222;
+	color: #fff;
+	width: 100%;
+}
+
+.textAllign{
+	padding: 5px;
+}
+
+
+<!--headerSettings -->
+
+
+
+
+
+
+.headerList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 7%;
+    width: 100%;
+    background: #f6f6f6;
+
+	
+}
+
+.headerLogoItem {
+    float: left;
+    
+   
+}
+
+.headerLogoItem a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+.headerLogoItem a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+ol.navbarIcon {
+	padding: 8px;
+
+}
+
+ol.navbarIcon li {
+	display: inline-block;
+	margin-left: 20px;
+}
+ol.navbarIcon li a {
+	color: #555;
+	padding: 8px 20px;
+	text-decoration: none;
+}
+ol.navbarIcon li a.active {
+	background: #222;
+	border: 1px solid #222;
+	color: #fff;
+	text-decorationation: none;
+}
+ol.navbarIcon li a:hover {
+	background: #222;
+	
+	color: #fff;
+	text-decoration: none;
+}
+.navbarIcon-logo{
+ padding: 8px;
+
+}
+
+.headerItem a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+.headerItem a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+.genreData{
+	margin-left:3%;
+}
+.allData{
+	margin-left : 25%;
+	letter-spacing : 7px;
 }

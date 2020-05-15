@@ -23,13 +23,14 @@ abstract public class Entertain implements Serializable{
 	@Column(length=8000)
 	private String synopsis;
 	private double size;
+	private int year;
 	
 	public Entertain() {
 		
 	}
 
 	public Entertain(String name, String img, double rating, double price,
-			String language, String downloadLink, String synopsis,double size,String status) {
+			String language, String downloadLink, String synopsis,double size,String status,int year) {
 		super();
 		this.name = name;
 		this.img = img;
@@ -40,6 +41,7 @@ abstract public class Entertain implements Serializable{
 		this.synopsis = synopsis;
 		this.size=size;
 		this.status=status;
+		this.year=year;
 	}
 
 	public String getName() {
@@ -116,12 +118,20 @@ abstract public class Entertain implements Serializable{
 		this.size = size;
 	}
 
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
 	@Override
 	public String toString() {
 		return "Entertain [name=" + name + ", img=" + img + ", status=" + status + ", rating=" + rating + ", price="
 				+ price + ", language=" + language + ", downloadLink=" + downloadLink + ", synopsis=" + synopsis
-				+ ", size=" + size + "]";
+				+ ", size=" + size + ", year=" + year + "]";
 	}
-	
+
 	
 }

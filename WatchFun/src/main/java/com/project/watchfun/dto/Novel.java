@@ -28,8 +28,8 @@ public class Novel extends Entertain implements Serializable {
 	private String id;
 
 	public Novel(String id, String name, String img, double rating, double price, String language, String downloadLink,
-			String synopsis, double size, String status, Set<Genre> genreSet, Set<Auteur> auteurSet) {
-		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
+			String synopsis, double size, String status, Set<Genre> genreSet, Set<Auteur> auteurSet,int year) {
+		super(name, img, rating, price, language, downloadLink, synopsis, size, status,year);
 		this.id = id;
 		this.genreSet = genreSet;
 		this.auteurSet = auteurSet;

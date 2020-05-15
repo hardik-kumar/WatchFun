@@ -44,8 +44,8 @@ public class TVSeries extends Entertain implements Serializable {
 
 	public TVSeries(int id, int parentId, String name, String img, double rating, double price, String language,
 			String downloadLink, String synopsis, double size, String status, Set<Auteur> auteurSet,
-			Set<Genre> genreSet, Set<Cast> castSet) {
-		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
+			Set<Genre> genreSet, Set<Cast> castSet,int year) {
+		super(name, img, rating, price, language, downloadLink, synopsis, size, status,year);
 		this.id = id;
 		this.parentId = parentId;
 		this.auteurSet = auteurSet;

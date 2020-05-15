@@ -41,16 +41,9 @@ public class Movie extends Entertain implements Serializable {
 	}
 
 	public Movie(String id, String name, String img, double rating, double price, String language, String downloadLink,
-			String synopsis, double size, String status) {
-		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
-		this.id = id;
-		// TODO Auto-generated constructor stub
-	}
-
-	public Movie(String id, String name, String img, double rating, double price, String language, String downloadLink,
 			String synopsis, double size, String status, Set<Cast> castSet, Set<Auteur> auteurSet,
-			Set<Genre> genreSet) {
-		super(name, img, rating, price, language, downloadLink, synopsis, size, status);
+			Set<Genre> genreSet,int year) {
+		super(name, img, rating, price, language, downloadLink, synopsis, size, status,year);
 		this.id = id;
 		this.castSet = castSet;
 		this.auteurSet = auteurSet;
